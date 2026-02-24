@@ -7,9 +7,8 @@ const PORT = process.env.PORT || 4242;
 
 app.get("/", async (_, res) => {
   const sql = neon(`${process.env.DATABASE_URL}`);
-  const response = await sql`SELECT version()`;
-  const { version } = response[0];
-  res.json({ version });
+  const response = await sql`SELECT * FROM doctor`;
+  res.json({ response });
 });
 
 app.listen(PORT, () => {
