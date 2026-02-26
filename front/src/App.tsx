@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { DisplayDoctor } from "./Components/DisplayDoctor";
+import { SearchBar } from "./Components/SearchBar";
 interface Doctor {
   id: number;
   name: string;
@@ -47,15 +48,7 @@ export default function App() {
         </article>
       </header>
       <main>
-        <form className="search-zone">
-          <h2>Recherche ton spécialiste bienveillant</h2>
-          <input
-            type="text"
-            placeholder="cardiologue... ville... code postale..."
-            onChange={handleSearchTerm}
-          />
-          <button>rechercher</button>
-        </form>
+        <SearchBar handleSearchTerm={handleSearchTerm} />
         <DisplayDoctor cardDoctor={cardDoctor} searchTerm={searchTerm} />
       </main>
       <footer>
