@@ -1,42 +1,140 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/styles/tailwind.css */
+@import "tailwindcss";
+
+/* ✅ Tokens (génère bg-*, text-* etc.) */
+@theme {
+  --color-accent-1: #fed604;
+  --color-accent-2: #fad946;
+  --color-soft-yellow: #f4dc77;
+
+  --color-text-blue: #152f5a;
+  --color-deep-blue: #2f5071;
+  --color-muted-blue: #7e90a6;
+
+  --color-header-grey: #ebeced;
+  --color-main-yellow: #f1e3ac;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@layer base {
+  body {
+    @apply bg-main-yellow text-text-blue font-sans antialiased;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tight;
+  }
+
+  a {
+    @apply text-text-blue hover:text-deep-blue transition;
   }
 }
 
-.card {
-  padding: 2em;
-}
+@layer components {
+  /* HEADER */
+  header {
+    @apply bg-main-yellow border-b border-text-blue/10;
+  }
 
-.read-the-docs {
-  color: #888;
+  .navbar ul {
+    @apply mx-auto max-w-6xl px-6 py-5 items-center;
+  }
+
+  .navbar h1 {
+    @apply text-2xl sm:text-3xl font-extrabold;
+  }
+
+  .navbar a {
+    @apply font-semibold underline decoration-accent-2 decoration-2 underline-offset-4;
+  }
+
+  /* MAIN */
+  main {
+    @apply bg-gradient-to-b from-header-grey via-header-grey to-white;
+  }
+
+  .search-zone {
+    @apply mx-auto max-w-6xl px-6 pt-10 pb-8 grid gap-4 sm:grid-cols-[1fr_auto] sm:items-end;
+  }
+
+  .search-zone h2 {
+    @apply text-3xl sm:text-4xl font-extrabold sm:col-span-2;
+  }
+
+  .search-zone input {
+    @apply w-full rounded-2xl bg-white px-4 py-3
+           border border-text-blue/15 shadow-sm
+           placeholder:text-muted-blue
+           focus:outline-none focus:ring-2 focus:ring-accent-1;
+  }
+
+  .search-zone button {
+    @apply rounded-2xl px-6 py-3 font-semibold
+           bg-text-blue text-white shadow-sm
+           hover:bg-deep-blue transition
+           focus:outline-none focus:ring-2 focus:ring-accent-1;
+  }
+
+  /* LISTE DOCTEURS */
+  .display-doctor {
+    @apply mx-auto max-w-6xl px-6 pb-14 grid gap-4;
+  }
+
+  .display-doctor > div {
+    @apply rounded-2xl bg-white/85 backdrop-blur
+           border border-text-blue/10
+           p-5 shadow-sm hover:shadow-md transition;
+  }
+
+  .card-doctor {
+    @apply flex-1 space-y-1;
+  }
+
+  .card-doctor li:first-child {
+    @apply text-lg font-bold;
+  }
+
+  .card-doctor li:nth-child(2) {
+    @apply text-deep-blue font-semibold;
+  }
+
+  .card-doctor li {
+    @apply text-sm sm:text-base;
+  }
+
+  .card-tag li {
+    @apply inline-flex items-center
+           rounded-full bg-accent-2/70
+           px-3 py-1 text-sm font-semibold text-text-blue
+           border border-text-blue/10;
+  }
+
+  /* FOOTER */
+  footer {
+    @apply bg-header-grey border-t border-text-blue/10;
+  }
+
+  footer section {
+    @apply mx-auto max-w-6xl px-6 py-10;
+  }
+
+  .footer-brand {
+    @apply flex items-center justify-between gap-4;
+  }
+
+  .footer-brand h2 {
+    @apply text-2xl font-extrabold;
+  }
+
+  .footer-brand button {
+    @apply rounded-2xl px-5 py-2.5 font-semibold
+           bg-text-blue text-white shadow-sm
+           hover:bg-deep-blue transition
+           focus:outline-none focus:ring-2 focus:ring-accent-1;
+  }
+
+  .footer-mention {
+    @apply mt-8 text-sm text-muted-blue;
+  }
 }
