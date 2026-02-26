@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-
+import { DisplayDoctor } from "./Components/DisplayDoctor";
 interface Doctor {
   id: number;
   name: string;
@@ -14,7 +14,7 @@ interface Doctor {
 
 export default function App() {
   const [cardDoctor, setCardDoctor] = useState<Doctor[]>([]);
-  /*   const [...arrayDocteur, ...setArrayDocteur] = useState(""); */
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function fetchDoctor() {
@@ -22,11 +22,16 @@ export default function App() {
       const dataDoctor = await response.json();
       console.log(dataDoctor);
       setCardDoctor(dataDoctor.response);
-      /*  setArrayDocteur(dataDoctor.results); */
     }
     fetchDoctor();
   }, []);
 
+  const handleSearchTerm = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value;
+    setSearchTerm(value);
+  };
+
+  console.log(searchTerm);
   return (
     <>
       <header>
@@ -42,35 +47,16 @@ export default function App() {
         </article>
       </header>
       <main>
-        <section className="search-zone">
+        <form className="search-zone">
           <h2>Recherche ton spécialiste bienveillant</h2>
           <input
             type="text"
             placeholder="cardiologue... ville... code postale..."
+            onChange={handleSearchTerm}
           />
           <button>rechercher</button>
-        </section>
-        <section className="display-doctor">
-          {cardDoctor.map((doctor) => {
-            return (
-              <div key={doctor.id}>
-                <ul className="card-doctor">
-                  <li>
-                    Dr {doctor.name} {doctor.firstname}
-                  </li>
-                  <li>{doctor.speciality}</li>
-                  <li>
-                    {doctor.street}, {doctor.town}
-                  </li>
-                  <li>{doctor.postale_code}</li>
-                </ul>
-                <ul className="card-tag">
-                  <li>{doctor.tag}</li>
-                </ul>
-              </div>
-            );
-          })}
-        </section>
+        </form>
+        <DisplayDoctor cardDoctor={cardDoctor} searchTerm={searchTerm} />
       </main>
       <footer>
         <section>
