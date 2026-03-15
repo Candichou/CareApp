@@ -10,7 +10,7 @@ export const SearchBar = ({ handleSearchTerm }: SearchBarProps) => {
       <h2>Recherche ton spécialiste bienveillant</h2>
       <input
         type="text"
-        placeholder="cardiologue... ville... code postale..."
+        placeholder="cardiologue..."
         onChange={handleSearchTerm}
       />
       <button>rechercher</button>

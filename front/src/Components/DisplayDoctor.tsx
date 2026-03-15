@@ -24,12 +24,12 @@ export const DisplayDoctor = ({
         .filter((doctor) => {
           const searchWord = searchTerm.trim().toLowerCase();
           const speciality = doctor.speciality ?? "";
-          const town = doctor.town ?? "";
+          /*   const town = doctor.town ?? ""; */
           const postale_code = doctor.postale_code ?? "";
 
           return (
             speciality.startsWith(searchWord) ||
-            town.startsWith(searchWord) ||
+            /*             town.includes(searchWord) || */
             postale_code.includes(searchWord)
           );
         })
