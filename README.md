@@ -1,6 +1,6 @@
 # 🧪 Lab — Terrain d'expérimentation
 
-Ce repo est mon bac à sable personnel. J'y prototypé et teste des features avant de les intégrer (ou non) dans mon futur site.
+Ce repo est mon bac à sable personnel. J'y prototype et teste des features avant de les intégrer (ou non) dans mon futur site.
 
 > Ici, le code est en mouvement. Les branches cassent, les idées s'affrontent, et c'est voulu.
 
