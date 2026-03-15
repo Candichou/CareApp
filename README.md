@@ -1,6 +1,6 @@
 # 🧪 Lab — Terrain d'expérimentation
 
-Ce repo est mon bac à sable personnel. J'y prototypé et teste des features avant de les intégrer (ou non) dans mon [site principal →](#).
+Ce repo est mon bac à sable personnel. J'y prototypé et teste des features avant de les intégrer (ou non) dans mon futur site.
 
 > Ici, le code est en mouvement. Les branches cassent, les idées s'affrontent, et c'est voulu.
 
@@ -9,7 +9,7 @@ Ce repo est mon bac à sable personnel. J'y prototypé et teste des features ava
 ## 🎯 Pourquoi ce repo existe
 
 Mon site RNCP a une contrainte : il doit rester propre, stable et présentable à tout moment.  
-Ce lab me permet d'explorer sans cette contrainte — tester une idée en 2h, voir si ça tient, puis décider.
+Ce lab me permet d'explorer sans cette contrainte — tester une idée en quelque heure, voir si ça tient, puis décider.
 
 ---
 
@@ -26,17 +26,17 @@ Ce lab me permet d'explorer sans cette contrainte — tester une idée en 2h, vo
 ## 🛠️ Stack
 
 - **React** + **TypeScript**
-- Outillage minimal — pas de sur-ingénierie, l'objectif c'est d'aller vite
+- tests avec Vitest
 
 ---
 
 ## 🔗 Projet principal
 
-Ce lab alimente → **[mon-site-rncp](#)** _(remplace ce lien par l'URL de ton repo RNCP)_
+Ce lab va alimenter mon futur site web pour mon titre pro RNCP 6 de concepteur developpeur d'application - Repo en attente.
 
 ---
 
 ## ℹ️ Note
 
 Ce repo est public par choix : je crois que montrer le processus est aussi utile que montrer le résultat.  
-Si quelque chose t'intéresse ou t'inspire, n'hésite pas à ouvrir une discussion.
+Si quelque chose t'intéresse ou t'intrigue ou tu veux m'aider : n'hésite pas à me contacter !
